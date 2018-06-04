@@ -13,6 +13,11 @@ And preencho o campo "texto_noticia" com valor "primeira noticia"
 And salvo a noticia
 Then consigo ver o valor "primeiro titulo" na lista de noticias
 
+Scenario: fazer noticia com sucesso Controller
+Given o sistema nao tem uma noticia com titulo "primeiro titulo" armazenado
+When tento criar uma noticia com titulo "primeiro titulo"
+Then tem uma noticia com titulo "primeiro titulo" armazenado
+
 Scenario: fazer noticia sem estar logado como administrador GUI
 Given Estou na pagina inicial
 And nao tem o nome "Administrador" na tela
@@ -34,5 +39,5 @@ Then recebo uma mensagem “titulo ja existente”
 Scenario: criar noticia sem sucesso com titulo duplicado Controller
 Given o sistema tem uma noticia com titulo "primeiro titulo" armazenado
 When tento criar uma noticia com titulo "primeiro titulo"
-Then recebo uma noticia com titulo "primeiro titulo" armazenado
+Then tem uma noticia com titulo "primeiro titulo" armazenado
 
