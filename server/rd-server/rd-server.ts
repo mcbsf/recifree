@@ -16,15 +16,15 @@ app.use(allowCrossDomain);
 
 app.use(bodyParser.json());
 
-app.get('/alunos', function (req, res) {
+app.get('/noticias', function (req, res) {
 
 })
 
-app.post('/aluno', function (req: express.Request, res: express.Response) {
+app.post('/noticia', function (req: express.Request, res: express.Response) {
 
 })
 
-app.put('/aluno', function (req: express.Request, res: express.Response) {
+app.put('/noticia', function (req: express.Request, res: express.Response) {
 
 })
 

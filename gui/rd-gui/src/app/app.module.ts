@@ -9,6 +9,8 @@ import { AppHeaderComponent } from './header/app-header.component';
 import { LoginComponent } from './components/login.component';
 import { NoticiasComponent } from './components/noticias.component';
 
+import { NoticiaService } from './components/noticia.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,7 @@ import { NoticiasComponent } from './components/noticias.component';
       },
 ])
   ],
-  providers: [],
+  providers: [NoticiaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

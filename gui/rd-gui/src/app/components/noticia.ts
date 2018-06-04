@@ -2,6 +2,7 @@ export class Noticia {
   titulo: string;
   descricao: string;
   texto: string;
+  data: Date
   
 
   constructor() {
@@ -12,6 +13,7 @@ export class Noticia {
     this.titulo = "";
     this.descricao = "";
     this.texto = "";
+    this.data = null
 
   }
 
