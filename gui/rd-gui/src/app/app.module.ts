@@ -15,7 +15,8 @@ import { NoticiaService } from './components/noticia.service';
   declarations: [
     AppComponent,
     AppHeaderComponent,
-    LoginComponent
+    LoginComponent,
+    NoticiasComponent
   ],
   imports: [
     BrowserModule,
@@ -23,13 +24,14 @@ import { NoticiaService } from './components/noticia.service';
     HttpModule,
     RouterModule.forRoot([
       {
-        path: 'login',
-        component: LoginComponent
-      },
-      {
         path: 'noticias',
         component: NoticiasComponent
       },
+      {
+        path: 'login',
+        component: LoginComponent
+      }
+      
 ])
   ],
   providers: [NoticiaService],

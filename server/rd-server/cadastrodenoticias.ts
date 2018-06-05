@@ -5,7 +5,7 @@ export class CadastroDeNoticias {
 
   criar(noticia: Noticia): Noticia {
     var result = null;
-    if (this.cpfNaoCadastrado(noticia.cpf)) {
+    if (this.tituloNaoCadastrado(noticia.titulo)) {
       result = new Noticia();
       result.copyFrom(noticia);
       this.noticias.push(result);
@@ -13,17 +13,17 @@ export class CadastroDeNoticias {
     return result;
   }
 
-  cpfNaoCadastrado(cpf: string): boolean {
-     return !this.noticias.find(a => a.cpf == cpf);
+  tituloNaoCadastrado(titulo: string): boolean {
+     return !this.noticias.find(a => a.titulo == titulo);
   }
 
   atualizar(noticia: Noticia): Noticia {
-    var result: Noticia = this.noticias.find(a => a.cpf == noticia.cpf);
+    var result: Noticia = this.noticias.find(a => a.titulo == noticia.titulo);
     if (result) result.copyFrom(noticia);
     return result;
   }
 
   getAlunos(): Noticia[] {
-    return this.alunos;
+    return this.noticias;
   }
 }
