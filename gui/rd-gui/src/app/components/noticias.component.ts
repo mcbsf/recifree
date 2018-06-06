@@ -14,7 +14,7 @@ export class NoticiasComponent implements OnInit {
   noticias: Noticia[],
 
   ngOnInit(): void {
-  	this.alunoService.getNoticias()
+  	this.noticiaService.getNoticias()
   		.then(noticias => this.noticias = noticias)
   		.catch(erro => alert(erro));
   }
