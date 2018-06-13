@@ -9,9 +9,9 @@ import { NoticiaService } from './noticia.service';
   styleUrls: ['./noticias.component.css']
 })
 export class NoticiasComponent implements OnInit {
-  constructor(private alunoService: NoticiaService) {}
+  constructor(private noticiaService: NoticiaService) {}
 
-  noticias: Noticia[],
+  noticias: Noticia[];
 
   ngOnInit(): void {
   	this.noticiaService.getNoticias()

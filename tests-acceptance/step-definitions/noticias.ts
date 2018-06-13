@@ -5,13 +5,9 @@ let expect = chai.expect;
 
 let sleep = (ms => new Promise(resolve => setTimeout(resolve, ms)));
 
-let sameCPF = ((elem, cpf) => elem.element(by.name('cpflist')).getText().then(text => text === cpf));
 let sameName = ((elem, name) => elem.element(by.name('nomelist')).getText().then(text => text === name));
 let sameProfile = ((elem, name) => elem.element(by.name('profile')).getText().then(text => text === name));
 let sameNoticia = ((elem, name) => elem.element(by.name('noticialist')).getText().then(text => text === name));
-
-let sameMeta = ((elem, meta) => elem.element(by.name('metalist')).getText().then(text => text === meta));
-let sameDiscrepancia = ((elem, meta) => elem.element(by.name('discrepancias')).getText().then(text => text === meta));
 
 /*
 Scenario: criar noticia sem sucesso com titulo duplicado GUI
