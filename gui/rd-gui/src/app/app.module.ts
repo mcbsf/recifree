@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule }   from '@angular/router';
+import { RouterModule}   from '@angular/router';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './components/app.component';
@@ -14,27 +14,38 @@ import { NoticiaService } from './components/noticia.service';
 @NgModule({
   declarations: [
     AppComponent,
+    NoticiasComponent,
     AppHeaderComponent,
-    LoginComponent,
-    NoticiasComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpModule, 
     RouterModule.forRoot([
+      {
+        path: '',
+        redirectTo: 'home', 
+        pathMatch: 'full'
+      },
+      {
+        path: 'home',
+        component: AppComponent
+      },
+
       {
         path: 'noticias',
         component: NoticiasComponent
       },
+
       {
         path: 'login',
         component: LoginComponent
       }
-      
-])
+    ])
   ],
   providers: [NoticiaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
