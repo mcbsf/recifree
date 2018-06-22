@@ -13,6 +13,22 @@ export class NoticiasComponent implements OnInit {
 
   noticias: Noticia[];
 
+  noticia: Noticia = new Noticia();
+  tituloduplicado: boolean = false;
+
+  criarnoticia(a: Noticia): void {
+    this.noticiaService.criar(a)
+      .then(ab => {
+        if (ab) {
+             this.noticias.push(ab);
+             this.noticia = new Noticia();
+          } else {
+            this.tituloduplicado = true
+          }
+        })
+        .catch(erro => alert(erro));
+   }
+
   ngOnInit(): void {
     this.noticiaService.getNoticias()
       .then(noticias => this.noticias = noticias)

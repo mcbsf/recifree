@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <td><label>Título</label></td>
+    <td><input [(ngModel)]="noticia.titulo" name="titulo_noticia"></td>
+    <td *ngIf="tituloduplicado">
+        Já existe um aluno com esse CPF
+      </td>
+  </tr>
+  <tr>
+    <td><label>Descrição</label></td>
+    <td><input [(ngModel)]="noticia.descricao" name="descricao_noticia"></td>
+  </tr>
+  <tr>
+    <td><label>Texto</label></td>
+    <td><input [(ngModel)]="noticia.texto" name="texto_noticia"></td>
+  </tr>
+  <button (click)="criarNoticia(a)">Salvar</button>
+</table>

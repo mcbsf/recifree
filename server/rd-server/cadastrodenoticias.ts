@@ -27,3 +27,4 @@ export class CadastroDeNoticias {
     return this.noticias;
   }
 }
+
