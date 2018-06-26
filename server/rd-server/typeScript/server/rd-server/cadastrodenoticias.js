@@ -23,7 +23,7 @@ class CadastroDeNoticias {
             result.copyFrom(noticia);
         return result;
     }
-    getAlunos() {
+    getNoticias() {
         return this.noticias;
     }
 }

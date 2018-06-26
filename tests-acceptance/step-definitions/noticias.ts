@@ -32,14 +32,8 @@ Then recebo uma mensagem “titulo vazio”
 
 
 defineSupportCode(function ({ Given, When, Then }) {
-    Given(/^tem o nome "([^\"]*)" na tela$/, async (adm) => {
-        var allalunos : ElementArrayFinder = element.all(by.name('profile'));
-        await allalunos;
-        var sameProfile = allalunos.filter(elem =>sameName(elem,adm));
 
-    })
-
-    Given(/^estou na pagina de noticias"$/, async () => {
+    Given(/^estou na pagina de noticias$/, async () => {
         await browser.get("http://localhost:4200/noticias");
         await expect(browser.getTitle()).to.eventually.equal('Noticias');
     });

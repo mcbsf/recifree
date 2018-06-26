@@ -7,7 +7,10 @@ export let config: Config = {
     SELENIUM_PROMISE_MANAGER: false,
 
     capabilities: {
-        browserName: 'chrome'
+        browserName: 'chrome', 
+            version: '66.0.3359.117', 
+            chromeOptions: {binary: '/home/CIN/mcbsf/.local/bin/google-chrome-stable'}
+
     },
 
     framework: 'custom',
@@ -27,6 +30,6 @@ export let config: Config = {
         compiler: "ts:ts-node/register",
         strict: true,
         format: ['pretty'],
-        require: ['../../stepdefinitions/*.ts'],
+        require: ['../../step-definitions/*.ts'],
     }
 };

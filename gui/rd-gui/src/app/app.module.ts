@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './components/app.component';
 import { AppHeaderComponent } from './header/app-header.component';
-import { LoginComponent } from './components/login.component';
+import { CriarNoticiaComponent } from './components/criarnoticia.component';
 import { NoticiasComponent } from './components/noticias.component';
 
 
@@ -16,7 +16,7 @@ import { NoticiaService } from './components/noticia.service';
   declarations: [
     AppComponent,
     AppHeaderComponent,
-    LoginComponent,
+    CriarNoticiaComponent,
     NoticiasComponent,
 
   ],
@@ -31,7 +31,7 @@ import { NoticiaService } from './components/noticia.service';
       },
       {
         path: 'criarnoticia',
-        component: LoginComponent
+        component: CriarNoticiaComponent
       },
 
       

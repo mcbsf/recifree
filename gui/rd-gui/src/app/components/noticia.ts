@@ -13,7 +13,7 @@ export class Noticia {
     this.titulo = "";
     this.descricao = "";
     this.texto = "";
-    this.data = null
+    this.data = new Date();
 
   }
 
@@ -28,6 +28,7 @@ export class Noticia {
     this.titulo = from.titulo;
     this.descricao = from.descricao;
     this.texto = from.texto;
+    this.data = from.data;
 
   }
 

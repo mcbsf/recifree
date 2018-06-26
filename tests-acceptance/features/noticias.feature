@@ -3,8 +3,7 @@ Feature: Como membro do recifree
 		 Para poder alimentar o site
 
 Scenario: fazer noticia com sucesso GUI
-Given estou na a pagina de noticias
-And tem o nome "Administrador" na tela
+Given estou na pagina de noticias
 When vou para a pagina de criar noticias
 And preencho o campo "titulo_noticia" com valor "primeiro titulo"
 And preencho o campo "descricao_noticia" com valor "primeira descricao"

@@ -5,7 +5,9 @@ exports.config = {
     seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
     SELENIUM_PROMISE_MANAGER: false,
     capabilities: {
-        browserName: 'chrome'
+        browserName: 'chrome',
+        version: '66.0.3359.117',
+        chromeOptions: { binary: '/home/CIN/mcbsf/.local/bin/google-chrome-stable' }
     },
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
@@ -20,6 +22,6 @@ exports.config = {
         compiler: "ts:ts-node/register",
         strict: true,
         format: ['pretty'],
-        require: ['../../stepdefinitions/*.ts'],
+        require: ['../../step-definitions/*.ts'],
     }
 };
