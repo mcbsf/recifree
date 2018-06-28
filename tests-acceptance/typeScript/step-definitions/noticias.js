@@ -15,7 +15,7 @@ let expect = chai.expect;
 let sleep = (ms => new Promise(resolve => setTimeout(resolve, ms)));
 let sameName = ((elem, name) => elem.element(protractor_1.by.name('nomelist')).getText().then(text => text === name));
 let sameProfile = ((elem, name) => elem.element(protractor_1.by.name('profile')).getText().then(text => text === name));
-let sameNoticia = ((elem, name) => elem.element(protractor_1.by.name('noticialist')).getText().then(text => text === name));
+let sameNoticia = ((elem, name) => elem.element(protractor_1.by.name('titulo')).getText().then(text => text === name));
 /*
 Scenario: criar noticia sem sucesso com titulo duplicado GUI
 Given estou na a pagina de noticias
@@ -39,28 +39,23 @@ Then recebo uma mensagem “titulo vazio”
 cucumber_1.defineSupportCode(function ({ Given, When, Then }) {
     Given(/^estou na pagina de noticias$/, () => __awaiter(this, void 0, void 0, function* () {
         yield protractor_1.browser.get("http://localhost:4200/noticias");
-        yield expect(protractor_1.browser.getTitle()).to.eventually.equal('Noticias');
+        yield expect(protractor_1.browser.getTitle()).to.eventually.equal('RdGui');
     }));
-    When(/^vou para a pagina de criacao de noticias"$/, () => __awaiter(this, void 0, void 0, function* () {
+    When(/^vou para a pagina de criar noticias$/, () => __awaiter(this, void 0, void 0, function* () {
         yield protractor_1.element(protractor_1.by.buttonText('Criar')).click();
-        yield expect(protractor_1.browser.getTitle()).to.eventually.equal('Criar Noticias');
     }));
-    When(/^And preencho o campo "([^\"]*)" com valor "([^\"]*)"$/, (field, value) => __awaiter(this, void 0, void 0, function* () {
+    When(/^preencho o campo "([^\"]*)" com valor "([^\"]*)"$/, (field, value) => __awaiter(this, void 0, void 0, function* () {
         yield protractor_1.$("input[name='" + field + "']").sendKeys(value);
     }));
-    When(/^tento criar a noticia$/, () => __awaiter(this, void 0, void 0, function* () {
+    When(/^salvo a noticia$/, () => __awaiter(this, void 0, void 0, function* () {
         yield protractor_1.element(protractor_1.by.buttonText('Salvar')).click();
+        yield protractor_1.browser.get("http://localhost:4200/noticias");
     }));
-    Then(/^recebo uma mensagem "([^\"]*)"$/, (titulo) => __awaiter(this, void 0, void 0, function* () {
-        var allalunos = protractor_1.element.all(protractor_1.by.name('titulo'));
-        yield allalunos;
-        var samenoticia = allalunos.filter(elem => sameNoticia(elem, titulo));
+    Then(/^consigo ver o valor "([^\"]*)" na lista de noticias$/, (titulo) => __awaiter(this, void 0, void 0, function* () {
+        var allnoticias = protractor_1.element.all(protractor_1.by.name('noticiaslist'));
+        yield allnoticias;
+        var samenoticia = allnoticias.filter(elem => sameNoticia(elem, titulo));
         yield samenoticia;
         yield samenoticia.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
-        Given(/^tem o nome "([^\"]*)" na tela$/, (adm) => __awaiter(this, void 0, void 0, function* () {
-            var allalunos = protractor_1.element.all(protractor_1.by.name('profile'));
-            yield allalunos;
-            var sameProfile = allalunos.filter(elem => sameName(elem, adm));
-        }));
     }));
 });
