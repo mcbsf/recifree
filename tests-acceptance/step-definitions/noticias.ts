@@ -59,4 +59,12 @@ defineSupportCode(function ({ Given, When, Then }) {
         await samenoticia.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
 
     });
+
+    Then(/^recebo uma mensagem "([^\"]*)"$/, async (mensagem) => {
+        var allnoticias : ElementArrayFinder = element.all(by.name('tituloDuplicado'));
+        await allnoticias;
+        await allnoticias.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));;
+        
+
+    });
 })

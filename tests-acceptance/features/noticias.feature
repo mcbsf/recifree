@@ -45,3 +45,10 @@ Given o sistema nao tem noticia armazenada
 When tento criar uma noticia com titulo ""
 Then o sistema nao tem noticia armazenada
 
+Scenario: visualizar noticia GUI
+Given estou na pagina de noticias
+And consigo ver o valor "primeiro titulo" na lista de noticias
+When abro a noticia
+Then consigo ver o valor "primeiro titulo" na lista de noticias
+
+

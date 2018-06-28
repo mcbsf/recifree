@@ -58,4 +58,10 @@ cucumber_1.defineSupportCode(function ({ Given, When, Then }) {
         yield samenoticia;
         yield samenoticia.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
     }));
+    Then(/^recebo uma mensagem "([^\"]*)"$/, (mensagem) => __awaiter(this, void 0, void 0, function* () {
+        var allnoticias = protractor_1.element.all(protractor_1.by.name('tituloDuplicado'));
+        yield allnoticias;
+        yield allnoticias.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
+        ;
+    }));
 });

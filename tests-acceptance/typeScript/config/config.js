@@ -7,7 +7,7 @@ exports.config = {
     capabilities: {
         browserName: 'chrome',
         version: '66.0.3359.117',
-        chromeOptions: { binary: '/usr/bin/google-chrome' }
+        chromeOptions: { binary: '/home/CIN/mcbsf/.local/bin/google-chrome-stable' }
     },
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
