@@ -29,6 +29,10 @@ export class NoticiasComponent implements OnInit {
         .catch(erro => alert(erro));
    }
 
+  abrirNoticia(a: Noticia): void {
+    this.noticiaService.buildNoticia(a);
+  }
+
   ngOnInit(): void {
     this.noticiaService.getNoticias()
       .then(noticias => this.noticias = noticias)

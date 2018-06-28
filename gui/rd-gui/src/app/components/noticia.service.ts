@@ -12,6 +12,8 @@ export class NoticiaService {
 
   constructor(private http: Http) { }
 
+  noticia: Noticia = new Noticia();
+
   criar(noticia: Noticia): Promise<Noticia> {
     return this.http.post(this.taURL + "/noticia",JSON.stringify(noticia), {headers: this.headers})
            .toPromise()
@@ -40,5 +42,13 @@ export class NoticiaService {
   private tratarErro(erro: any): Promise<any>{
     console.error('Acesso mal sucedido ao serviço de noticias',erro);
     return Promise.reject(erro.message || erro);
+  }
+
+  buildNoticia(noticia: Noticia): void{
+    this.noticia = noticia;
+  }
+
+  getNoticia(): Noticia{
+    return this.noticia;
   }
 }

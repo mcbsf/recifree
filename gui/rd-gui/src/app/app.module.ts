@@ -8,6 +8,7 @@ import { AppComponent } from './components/app.component';
 import { AppHeaderComponent } from './header/app-header.component';
 import { CriarNoticiaComponent } from './components/criarnoticia.component';
 import { NoticiasComponent } from './components/noticias.component';
+import { VerNoticiaComponent } from './components/vernoticia.component';
 
 
 import { NoticiaService } from './components/noticia.service';
@@ -18,6 +19,7 @@ import { NoticiaService } from './components/noticia.service';
     AppHeaderComponent,
     CriarNoticiaComponent,
     NoticiasComponent,
+    VerNoticiaComponent,
 
   ],
   imports: [
@@ -32,6 +34,10 @@ import { NoticiaService } from './components/noticia.service';
       {
         path: 'criarnoticia',
         component: CriarNoticiaComponent
+      },
+      {
+        path: 'vernoticia',
+        component: VerNoticiaComponent
       },
 
       
