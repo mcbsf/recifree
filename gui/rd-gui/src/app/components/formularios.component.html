@@ -1,0 +1,59 @@
+<html>
+
+<h1>Formulário de inscrição</h1>
+<h2>Seja membro do Recifree!</h2>
+<p>Preencha e envie o formulário a seguir. Caso selecionado(a), entraremos em contato.</p>
+
+<form>
+	<div>
+		<label for="nome">Nome completo:</label>
+		<input [(ngModel)]="formulario.nome" id="nome" name="nome" required />
+	</div>
+	<div>
+		<label for="idade">Idade:</label>
+		<input [(ngModel)]="formulario.idade" id="idade" name="idade" required />
+	</div>
+	<div>
+		<label for="telefone">Telefone:</label>
+		<input [(ngModel)]="formulario.telefone" id="telefone" name="telefone" minlength="8" required />
+	</div>
+	<div>
+		<label for="email">E-mail:</label>
+		<input [(ngModel)]="formulario.email" id="email" name="email" required />
+	</div>
+	<div>
+		<label for="ocupacao">Ocupação:</label>
+		<input [(ngModel)]="formulario.ocupacao" id="ocupacao" name="ocupacao" required />
+	</div>
+	<div>
+		<label for="endereco">Endereço:</label>
+		<input [(ngModel)]="formulario.endereco" id="endereco" name="endereco" required />
+	</div>
+	<div>
+		<td><label for="pergunta1">O que lhe chamou a atenção no coletivo Recifree?</label></td>
+		<textarea [(ngModel)]="formulario.pergunta1" id="pergunta1" name="pergunta1" rows="3" cols="60" required></textarea>
+	</div>
+	<div>
+		<td><label for="pergunta2">Qual sua intenção em fazer parte?</label></td>
+		<textarea [(ngModel)]="formulario.pergunta2" id="pergunta2" name="pergunta2" rows="3" cols="60" required></textarea>
+	</div>
+	<div>
+		<td><label for="pergunta3">O que você entende por Política de Redução de Danos?</label></td>
+		<textarea [(ngModel)]="formulario.pergunta3" id="pergunta3" name="pergunta3" rows="3" cols="60" required></textarea>
+	</div>
+	
+	<td (mousemove)="hideElement('msgCamposVazios',true)" name="msg" id="msgCamposVazios" hidden>* Preencha todos os campos.</td>
+	<button (click)="cadastrarFormulario(formulario)" id="buttonEnviar">Enviar</button>
+
+<tr *ngIf="emailCadastrado">
+	<td name="msg">E-mail já cadastrado.</td>
+	<td><button (click)="atualizarCadastro(formulario)" id="buttonAtualizar">Atualizar formulário</button></td>
+	<td><button (click)="cancelar()" id="buttonCancelar">Cancelar</button></td>
+</tr>
+
+<td *ngIf="foiAtualizado" (mousemove)="resetMensagem()" name="msg" id="atualizado">Formulário atualizado com sucesso!</td>
+<td *ngIf="foiCadastrado" (mousemove)="resetMensagem()" name="msg" id="cadastrado">Formulário cadastrado com sucesso!</td>
+
+</form>
+
+</html>

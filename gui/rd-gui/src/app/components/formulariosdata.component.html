@@ -1,0 +1,56 @@
+<table>
+
+	<div>
+		<h1>Formulários cadastrados</h1>
+	</div>
+
+	<div>
+		<tr><p>Opçoes: </p></tr>
+		<tr>
+			<td><button (click)="removerSelecionados()">Remover selecionados</button></td>
+			<td (mousemove)="hideMessage('msgUnselected')" name="msg" id="msgUnselected" hidden>* Nenhum formulário selecionado.</td>
+			<td (mousemove)="hideMessage('msgSuccess')" name="msg" id="msgSuccess" hidden>Formulários removidos com sucesso!</td>
+		</tr>
+		<tr>
+			<td><button (click)="removerTodos()">Remover todos</button></td>
+		</tr>
+		<tr>
+			<td><button (click)="exportarSelecionados()">Baixar selecionados</button></td>
+			<td (mousemove)="hideMessage('msgUnselected')" name="msg" id="msgUnselected" hidden>* Nenhum formulário selecionado.</td>
+			<td (mousemove)="hideMessage('msgSuccess')" name="msg" id="msgSuccess" hidden>Formulários exportados com sucesso!</td>
+		</tr>
+		<tr>
+			<td><button (click)="exportarTodos()">Baixar todos</button></td>
+		</tr>
+
+	</div>
+
+	<div>
+		<tr>
+			<th>Nome</th>
+			<th>E-mail</th>
+			<th>Idade</th>
+			<th>Telefone</th>
+			<th>Ocupação</th>
+			<th>Endereço</th>
+			<th>Pergunta 1</th>
+			<th>Pergunta 2</th>
+			<th>Pergunta 3</th>
+		</tr>
+		<tr *ngFor="let f of formularios" name="lista_formularios">
+			<td name="lista_nomes">{{f.nome}}</td>
+			<td name="lista_emails">{{f.email}}</td>
+			<td>{{f.idade}}</td>
+			<td>{{f.telefone}}</td>
+			<td>{{f.ocupacao}}</td>
+			<td>{{f.endereco}}</td>
+			<td>{{f.pergunta1}}</td>
+			<td>{{f.pergunta2}}</td>
+			<td>{{f.pergunta3}}</td>
+			<td><input type="checkbox" (change)="onChange(f)" [id]="f.email" value="unchecked" /></td>
+			<td><button (click)="removerFormulario(f)">Remover</button></td>
+		</tr>
+	</div>
+
+</table>
+

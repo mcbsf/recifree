@@ -10,8 +10,12 @@ import { CriarNoticiaComponent } from './components/criarnoticia.component';
 import { NoticiasComponent } from './components/noticias.component';
 import { VerNoticiaComponent } from './components/vernoticia.component';
 
+import { FormulariosComponent } from './components/formularios.component';
+import { FormulariosDataComponent } from './components/formulariosdata.component';
+
 
 import { NoticiaService } from './components/noticia.service';
+import { FormularioService } from './components/formulario.service';
 
 @NgModule({
   declarations: [
@@ -20,6 +24,8 @@ import { NoticiaService } from './components/noticia.service';
     CriarNoticiaComponent,
     NoticiasComponent,
     VerNoticiaComponent,
+	  FormulariosComponent,
+	  FormulariosDataComponent
 
   ],
   imports: [
@@ -39,11 +45,19 @@ import { NoticiaService } from './components/noticia.service';
         path: 'vernoticia',
         component: VerNoticiaComponent
       },
+      {
+        path: 'formularios',
+        component: FormulariosComponent
+        },
+        {
+        path: 'formulariosdata',
+        component: FormulariosDataComponent
+        },
 
       
 ])
   ],
-  providers: [NoticiaService],
+  providers: [NoticiaService, FormularioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
